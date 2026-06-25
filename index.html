@@ -110,15 +110,15 @@
 
         /* --- Logo Section --- */
         .logo-display-container {
-            display: grid;
-            grid-template-columns: 1fr 250px;
+            display: flex;
+            flex-direction: column;
             gap: 2rem;
             align-items: stretch;
         }
 
         @media (max-width: 900px) {
             .logo-display-container {
-                grid-template-columns: 1fr;
+                /* layout stays column */
             }
         }
 
@@ -566,20 +566,23 @@
                     </div>
                 </div>
 
-                <!-- Background Colors -->
-                <div class="controls-group">
-                    <h3 class="controls-title">Canvas Background</h3>
-                    <div class="horizontal-colors" id="bgColors">
-                        <!-- Populated by JS -->
+                <!-- Color Controls -->
+                <div style="display: flex; gap: 2rem; flex-wrap: wrap; margin-top: 1rem;">
+                    <!-- Background Colors -->
+                    <div class="controls-group" style="flex: 1; min-width: 300px;">
+                        <h3 class="controls-title">Canvas Background</h3>
+                        <div class="horizontal-colors" id="bgColors">
+                            <!-- Populated by JS -->
+                        </div>
                     </div>
-                </div>
-            </div>
 
-            <!-- Right Side: Logo Colors Sidebar -->
-            <div class="logo-color-sidebar">
-                <h3 class="controls-title" style="margin-bottom: 1.5rem;">Logo Color</h3>
-                <div class="color-list" id="logoColors">
-                    <!-- Populated by JS -->
+                    <!-- Logo Colors -->
+                    <div class="controls-group" style="flex: 1; min-width: 300px;">
+                        <h3 class="controls-title">Logo Color</h3>
+                        <div class="horizontal-colors" id="logoColors">
+                            <!-- Populated by JS -->
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -596,7 +599,7 @@
                     <span class="typo-name">Poppins</span>
                     <span class="typo-usage">Headings & Sections</span>
                 </div>
-                <textarea class="typo-editable edit-poppins" rows="2" spellcheck="false" oninput="autoResize(this)">The quick brown fox jumps over the lazy dog.</textarea>
+                <textarea class="typo-editable edit-poppins" rows="2" spellcheck="false" oninput="autoResize(this)">Skip the cab refusals. We come to you. No fur, no fuss</textarea>
                 <div class="hint">Click to edit and test this font in real-time</div>
             </div>
 
@@ -606,7 +609,7 @@
                     <span class="typo-name">Inter</span>
                     <span class="typo-usage">Body & Captions</span>
                 </div>
-                <textarea class="typo-editable edit-inter" rows="4" spellcheck="false" oninput="autoResize(this)">Inter is a typeface carefully crafted & designed for computer screens. It features a tall x-height to aid in readability of mixed-case and lower-case text. You can type here to see how your content looks in the body format.</textarea>
+                <textarea class="typo-editable edit-inter" rows="4" spellcheck="false" oninput="autoResize(this)">Book a grooming session in minutes. Our vetted professionals come to your door — no salon trips, no stress for your pet.</textarea>
                 <div class="hint">Click to edit and test this font in real-time</div>
             </div>
 
@@ -626,7 +629,7 @@
                     <span class="typo-name">Fredoka</span>
                     <span class="typo-usage">Primary Logo Mark</span>
                 </div>
-                <textarea class="typo-editable edit-fredoka" rows="1" spellcheck="false" oninput="autoResize(this)">BrandName</textarea>
+                <textarea class="typo-editable edit-fredoka" rows="1" spellcheck="false" oninput="autoResize(this)">Fur Dial</textarea>
                 <div class="hint">Click to edit and test this font in real-time</div>
             </div>
 
