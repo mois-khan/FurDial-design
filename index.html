@@ -1220,7 +1220,7 @@
 
 <nav class="navbar">
     <a href="#" class="nav-logo" id="navLogo">
-        <!-- SVG injected via JS -->
+        <img src="furdial_horizontal_navy.svg" alt="FurDial Logo" style="width: 100%; height: auto;">
     </a>
     <div class="nav-links">
         <a href="#logo-explorer" class="nav-link">Logo Explorer</a>
@@ -1872,29 +1872,7 @@
         updateThemeIcon();
     });
 
-    // --- Inject Navbar Logo safely via DOM ---
-    window.addEventListener('DOMContentLoaded', () => {
-        const sourceSvg = document.querySelector('#svg-horizontal svg');
-        if (sourceSvg) {
-            const clonedSvg = sourceSvg.cloneNode(true);
-            
-            // Remove the inline style that collapses the SVG height
-            clonedSvg.removeAttribute('style');
-            
-            const paths = clonedSvg.querySelectorAll('path');
-            if (paths.length >= 2) {
-                // The parent <g> has fill="currentColor", let's remove it so paths can have their own fills
-                const g = clonedSvg.querySelector('g');
-                if (g) g.removeAttribute('fill');
-                
-                // Color the Icon (Coral/Orange)
-                paths[0].setAttribute('fill', 'var(--spotlight)');
-                // Color the Wordmark (Text) (var(--navy) adapts to light/dark mode)
-                paths[1].setAttribute('fill', 'var(--navy)');
-            }
-            document.getElementById('navLogo').appendChild(clonedSvg);
-        }
-    });
+   
 
     const typeScale = document.getElementById('typeScale');
     const scaleValue = document.getElementById('scaleValue');
