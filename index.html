@@ -43,7 +43,10 @@
             --ink: #FDF9F5;
             --grey: #A09A95;
             --hairline: #383431;
-            --navy: #E63B1E;
+            /* In dark mode, we'll map navy to white so headings look clean, 
+               and we'll use a dedicated --accent variable for Coral */
+            --navy: #FDF9F5; 
+            --accent: #E63B1E;
         }
 
         body {
@@ -183,7 +186,8 @@
 
         .tab-btn.active {
             background: var(--white);
-            color: var(--navy);
+            border-color: var(--accent, var(--navy));
+            color: var(--accent, var(--navy));
             box-shadow: var(--shadow-sm);
         }
 
