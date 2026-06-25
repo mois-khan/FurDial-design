@@ -487,6 +487,167 @@
             font-size: 1rem;
         }
 
+        /* ===== MOBILE RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .container {
+                padding: 1.5rem 1rem;
+            }
+
+            .page-header {
+                margin-bottom: 2rem;
+            }
+
+            .page-header h1 {
+                font-size: 1.75rem;
+            }
+
+            .page-header p {
+                font-size: 0.95rem;
+            }
+
+            .card {
+                padding: 1.25rem;
+                margin-bottom: 2rem;
+                border-radius: var(--radius-md);
+            }
+
+            .section-title {
+                font-size: 1.25rem;
+                margin-bottom: 1rem;
+            }
+
+            /* Tabs: prevent overflow */
+            .logo-tabs {
+                gap: 0.25rem;
+                padding: 0.35rem;
+            }
+
+            .tab-btn {
+                padding: 0.5rem 0.4rem;
+                font-size: 0.7rem;
+                white-space: nowrap;
+            }
+
+            /* Logo canvas: fixed height on mobile */
+            .logo-canvas-wrapper {
+                min-height: 220px;
+                max-height: 280px;
+                flex: none;
+            }
+
+            .logo-main {
+                gap: 0.75rem;
+            }
+
+            /* Controls sidebar: stack vertically, compact */
+            .controls-sidebar {
+                grid-template-columns: 1fr;
+                gap: 0.75rem;
+            }
+
+            .controls-group {
+                padding: 0.75rem;
+                gap: 0.5rem;
+            }
+
+            .controls-title {
+                font-size: 0.85rem;
+                margin-bottom: 0.25rem;
+            }
+
+            /* Color items: horizontal scroll row */
+            .horizontal-colors {
+                flex-wrap: nowrap;
+                overflow-x: auto;
+                gap: 0.5rem;
+                padding-bottom: 0.35rem;
+                scrollbar-width: thin;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            .horizontal-colors::-webkit-scrollbar {
+                height: 4px;
+            }
+
+            .horizontal-colors::-webkit-scrollbar-thumb {
+                background: var(--hairline);
+                border-radius: 4px;
+            }
+
+            .horizontal-colors .color-item {
+                flex-shrink: 0;
+                padding: 0.35rem 0.5rem;
+                gap: 0.5rem;
+            }
+
+            .color-swatch {
+                width: 24px;
+                height: 24px;
+            }
+
+            .color-name {
+                font-size: 0.75rem;
+            }
+
+            .color-hex {
+                font-size: 0.65rem;
+            }
+
+            /* Typography section */
+            .typography-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .typo-card {
+                padding: 1rem;
+                gap: 1rem;
+            }
+
+            .typo-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
+            }
+
+            .edit-poppins {
+                font-size: 1.5rem;
+            }
+
+            .edit-inter {
+                font-size: 0.9rem;
+                min-height: 60px;
+            }
+
+            .edit-lora {
+                font-size: 1.1rem;
+            }
+
+            .edit-fredoka {
+                font-size: 1.75rem;
+            }
+
+            .edit-nunito {
+                font-size: 1rem;
+            }
+
+            .hint {
+                font-size: 0.7rem;
+            }
+        }
+
+        /* Extra small screens */
+        @media (max-width: 400px) {
+            .tab-btn {
+                font-size: 0.6rem;
+                padding: 0.4rem 0.25rem;
+            }
+
+            .logo-canvas-wrapper {
+                min-height: 180px;
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -630,12 +791,12 @@
 
     <!-- Typography Section -->
     <section class="card">
-        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; margin-bottom: 2rem;">
-            <h2 class="section-title" style="margin-bottom: 0;">Typography System</h2>
-            <div style="display: flex; align-items: center; gap: 1rem; background: var(--bg-canvas); padding: 0.5rem 1.25rem; border-radius: var(--radius-lg); border: 1px solid var(--hairline);">
-                <label for="typeScale" style="font-family: var(--font-heading); color: var(--navy); font-weight: 500; font-size: 0.875rem;">Scale Text:</label>
-                <input type="range" id="typeScale" min="0.5" max="3" step="0.1" value="1" style="width: 120px; cursor: pointer;">
-                <span id="scaleValue" style="font-family: var(--font-body); color: var(--grey); min-width: 35px; font-size: 0.875rem; text-align: right;">1.0x</span>
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; margin-bottom: 2rem;">
+            <h2 class="section-title" style="margin-bottom: 0; flex-shrink: 0;">Typography System</h2>
+            <div style="display: flex; align-items: center; gap: 0.75rem; background: var(--bg-canvas); padding: 0.5rem 1rem; border-radius: var(--radius-lg); border: 1px solid var(--hairline); min-width: 0;">
+                <label for="typeScale" style="font-family: var(--font-heading); color: var(--navy); font-weight: 500; font-size: 0.8rem; white-space: nowrap;">Scale:</label>
+                <input type="range" id="typeScale" min="0.5" max="3" step="0.1" value="1" style="width: 100px; cursor: pointer; min-width: 60px;">
+                <span id="scaleValue" style="font-family: var(--font-body); color: var(--grey); min-width: 30px; font-size: 0.8rem; text-align: right;">1.0x</span>
             </div>
         </div>
         
