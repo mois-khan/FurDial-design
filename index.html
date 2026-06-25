@@ -111,19 +111,15 @@
         /* --- Logo Section --- */
         .logo-display-container {
             display: grid;
-            grid-template-columns: 1fr 340px;
+            grid-template-columns: 1.1fr 1fr;
             gap: 2rem;
             align-items: stretch;
-            height: 65vh;
             min-height: 480px;
-            max-height: 600px;
         }
 
-        @media (max-width: 600px) {
+        @media (max-width: 900px) {
             .logo-display-container {
                 grid-template-columns: 1fr;
-                height: auto;
-                max-height: none;
             }
         }
 
@@ -180,11 +176,16 @@
         }
 
         .controls-sidebar {
-            display: flex;
-            flex-direction: column;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
             gap: 1.5rem;
-            overflow-y: auto;
-            padding-right: 0.5rem;
+            align-content: start;
+        }
+
+        @media (max-width: 1200px) {
+            .controls-sidebar {
+                grid-template-columns: 1fr;
+            }
         }
 
         .logo-canvas {
