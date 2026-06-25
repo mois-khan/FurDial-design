@@ -37,6 +37,23 @@
             --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
+        body.dark-mode {
+            --bg-canvas: #14110F;
+            --white: #201D1A;
+            --ink: #FDF9F5;
+            --grey: #A09A95;
+            --hairline: #383431;
+            --navy: #66B2FF;
+        }
+
+        body {
+            transition: background-color 0.4s ease, color 0.4s ease;
+        }
+        
+        .card, .controls-group, .logo-tabs, .tab-btn {
+            transition: background-color 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease, color 0.4s ease;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -475,6 +492,9 @@
 <body>
 
 <div class="container">
+    <div style="display: flex; justify-content: flex-end; margin-bottom: 1rem;">
+        <button id="themeToggle" class="tab-btn" style="width: auto; padding: 0.6rem 1.5rem; background: var(--white); border: 1px solid var(--hairline); border-radius: var(--radius-lg); font-size: 0.9rem; box-shadow: var(--shadow-sm);">🌙 Dark Mode</button>
+    </div>
     <header class="page-header">
         <h1>Fur Dial Brand Guidelines</h1>
         <p>A comprehensive overview of our visual identity, featuring interactive logo variations and typography scales.</p>
@@ -610,7 +630,14 @@
 
     <!-- Typography Section -->
     <section class="card">
-        <h2 class="section-title">Typography System</h2>
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; margin-bottom: 2rem;">
+            <h2 class="section-title" style="margin-bottom: 0;">Typography System</h2>
+            <div style="display: flex; align-items: center; gap: 1rem; background: var(--bg-canvas); padding: 0.5rem 1.25rem; border-radius: var(--radius-lg); border: 1px solid var(--hairline);">
+                <label for="typeScale" style="font-family: var(--font-heading); color: var(--navy); font-weight: 500; font-size: 0.875rem;">Scale Text:</label>
+                <input type="range" id="typeScale" min="0.5" max="3" step="0.1" value="1" style="width: 120px; cursor: pointer;">
+                <span id="scaleValue" style="font-family: var(--font-body); color: var(--grey); min-width: 35px; font-size: 0.875rem; text-align: right;">1.0x</span>
+            </div>
+        </div>
         
         <div class="typography-grid">
             <!-- Headings -->
@@ -777,8 +804,38 @@
         });
     }
 
+    // --- Features ---
+    const themeToggle = document.getElementById('themeToggle');
+    themeToggle.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+        themeToggle.textContent = document.body.classList.contains('dark-mode') ? '☀️ Light Mode' : '🌙 Dark Mode';
+    });
+
+    const typeScale = document.getElementById('typeScale');
+    const scaleValue = document.getElementById('scaleValue');
+    const textareas = document.querySelectorAll('textarea');
+    const originalSizes = new Map();
+    
+    typeScale.addEventListener('input', (e) => {
+        const scale = parseFloat(e.target.value);
+        scaleValue.textContent = scale.toFixed(1) + 'x';
+        
+        textareas.forEach(ta => {
+            if (!originalSizes.has(ta)) {
+                originalSizes.set(ta, parseFloat(window.getComputedStyle(ta).fontSize));
+            }
+            const baseSize = originalSizes.get(ta);
+            ta.style.fontSize = (baseSize * scale) + 'px';
+            autoResize(ta);
+        });
+    });
+
     // Run Init
-    window.addEventListener('DOMContentLoaded', init);
+    window.addEventListener('DOMContentLoaded', () => {
+        init();
+        // Initialize original sizes on load
+        textareas.forEach(ta => originalSizes.set(ta, parseFloat(window.getComputedStyle(ta).fontSize)));
+    });
     window.addEventListener('resize', autoResizeAll);
 </script>
 </body>
