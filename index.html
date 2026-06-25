@@ -664,21 +664,589 @@
             }
         }
 
+        /* --- Brand Story & Values --- */
+        .story-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+        
+        .core-values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .value-card {
+            background: var(--bg-canvas);
+            border: 1px solid var(--hairline);
+            border-radius: var(--radius-md);
+            padding: 2rem;
+            height: 100%;
+        }
+
+        .value-icon {
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+
+        .value-title {
+            font-family: var(--font-heading);
+            font-size: 1.125rem;
+            color: var(--navy);
+            margin-bottom: 0.75rem;
+            font-weight: 600;
+        }
+
+        /* --- Colour Palette --- */
+        .color-palette-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .color-swatch-card {
+            border: 1px solid var(--hairline);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            background: var(--white);
+        }
+
+        .swatch-color {
+            height: 140px;
+            width: 100%;
+            border-bottom: 1px solid var(--hairline);
+        }
+
+        .swatch-info {
+            padding: 1.5rem;
+            flex: 1;
+        }
+
+        .swatch-number {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--grey);
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .swatch-name {
+            font-family: var(--font-heading);
+            font-size: 1.125rem;
+            color: var(--navy);
+            margin-bottom: 0.25rem;
+            font-weight: 600;
+        }
+
+        .swatch-hex {
+            font-family: monospace;
+            color: var(--grey);
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .swatch-desc {
+            font-size: 0.875rem;
+            color: var(--grey);
+            line-height: 1.5;
+        }
+
+        .color-pairings-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .pairing-card {
+            display: flex;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--hairline);
+            overflow: hidden;
+            background: var(--white);
+        }
+
+        .pairing-demo {
+            width: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            font-family: var(--font-heading);
+            flex-shrink: 0;
+        }
+
+        .pairing-info {
+            padding: 1.5rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        /* --- Cross Platform Font Map --- */
+        .font-map-container {
+            margin-top: 3rem;
+            border-top: 1px solid var(--hairline);
+            padding-top: 3rem;
+            overflow-x: auto;
+        }
+
+        .font-table {
+            width: 100%;
+            min-width: 650px;
+            border-collapse: collapse;
+            text-align: left;
+        }
+
+        .font-table th {
+            background: var(--navy);
+            color: #FDF9F5;
+            padding: 1rem;
+            font-family: var(--font-heading);
+            font-size: 0.875rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .font-table th:first-child { border-top-left-radius: var(--radius-md); }
+        .font-table th:last-child { border-top-right-radius: var(--radius-md); }
+
+        .font-table td {
+            padding: 1.25rem 1rem;
+            border-bottom: 1px solid var(--hairline);
+            background: var(--bg-canvas);
+            color: var(--ink);
+            font-size: 0.95rem;
+        }
+
+        .font-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 0.35rem 0.85rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            background: #E8F5E9; /* Light Green */
+            color: #2E7D32; /* Dark Green */
+            white-space: nowrap;
+        }
+        
+        .badge.warning {
+            background: #FFF3E0;
+            color: #E65100;
+        }
+
+        .tip-box {
+            margin-top: 1.5rem;
+            background: #FFF9E6; /* Light yellow */
+            border: 1px solid #FFE082;
+            padding: 1rem 1.5rem;
+            border-radius: var(--radius-md);
+            color: #5D4037;
+            font-size: 0.9rem;
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+        }
+
+        body.dark-mode .tip-box {
+            background: #2D2615;
+            border-color: #4D3B12;
+            color: #E5E5E5;
+        }
+        
+        body.dark-mode .badge {
+            background: #1B3320;
+            color: #81C784;
+        }
+        
+        body.dark-mode .badge.warning {
+            background: #3E2723;
+            color: #FFB74D;
+        }
+
+        /* --- Brand Voice & Tone --- */
+        .tone-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .tone-card {
+            padding: 2.5rem 2rem;
+            border-radius: var(--radius-md);
+            color: #FDF9F5;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Add a subtle circular glow in the corner of tone cards for aesthetics */
+        .tone-card::after {
+            content: '';
+            position: absolute;
+            bottom: -30px;
+            right: -30px;
+            width: 120px;
+            height: 120px;
+            background: rgba(255,255,255,0.08);
+            border-radius: 50%;
+        }
+
+        .tone-card h3 {
+            color: inherit;
+            font-size: 1.5rem;
+        }
+
+        .tone-card p {
+            font-size: 0.95rem;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        .tone-example {
+            margin-top: auto;
+            border-top: 1px solid rgba(255,255,255,0.2);
+            padding-top: 1.5rem;
+            font-family: var(--font-quote);
+            font-style: italic;
+            font-size: 1.1rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .tone-example-label {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.7;
+            margin-bottom: 0.5rem;
+            font-family: var(--font-body);
+            font-style: normal;
+            display: block;
+        }
+
+        .dos-donts-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .do-card, .dont-card {
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            background: var(--white);
+            border: 1px solid var(--hairline);
+        }
+
+        .do-header {
+            background: #E8F5E9;
+            color: #2E7D32;
+            padding: 1rem 1.5rem;
+            font-weight: 700;
+            font-family: var(--font-heading);
+            letter-spacing: 1px;
+        }
+
+        .dont-header {
+            background: #FFEBEE;
+            color: #C62828;
+            padding: 1rem 1.5rem;
+            font-weight: 700;
+            font-family: var(--font-heading);
+            letter-spacing: 1px;
+        }
+
+        body.dark-mode .do-header { background: #1B3320; color: #A5D6A7; }
+        body.dark-mode .dont-header { background: #3B1B1B; color: #EF9A9A; }
+
+        .rules-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .rules-list li {
+            padding: 1.25rem 1.5rem;
+            border-bottom: 1px solid var(--hairline);
+            display: flex;
+            gap: 1rem;
+            font-size: 0.95rem;
+            color: var(--ink);
+        }
+
+        .rules-list li:last-child { border-bottom: none; }
+        
+        /* --- Checklist --- */
+        .checklist-card {
+            background: #002F4D; /* Deep Navy */
+            color: #FFFFFF;
+            padding: 3.5rem 3rem;
+            border-radius: var(--radius-lg);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .checklist-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(135deg, rgba(230,59,30,0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .checklist-card h2, .checklist-card p {
+            color: #FFFFFF;
+            position: relative;
+            z-index: 1;
+        }
+
+        .checklist-card p {
+            opacity: 0.8;
+            margin-top: 0.5rem;
+        }
+
+        .checklist-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-top: 2.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .check-item {
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+            font-size: 1.05rem;
+        }
+
+        .check-icon {
+            color: #E63B1E; /* Coral */
+            flex-shrink: 0;
+            margin-top: 0.2rem;
+        }
+
+        @media (max-width: 768px) {
+            .story-grid, .color-pairings-grid, .dos-donts-grid, .checklist-grid {
+                grid-template-columns: 1fr;
+            }
+            .checklist-card {
+                padding: 2.5rem 1.5rem;
+            }
+        }
+        /* --- Navbar & Footer --- */
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(253, 249, 245, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--hairline);
+            padding: 1rem 2.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: var(--transition);
+        }
+
+        body.dark-mode .navbar {
+            background: rgba(20, 17, 15, 0.85);
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            width: 140px; /* SVG width */
+        }
+        
+        .nav-logo svg {
+            width: 100%;
+            height: auto;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--grey);
+            font-family: var(--font-heading);
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: var(--transition);
+            padding: 0.4rem 0.8rem;
+            border-radius: var(--radius-md);
+        }
+
+        .nav-link:hover {
+            color: var(--spotlight);
+            transform: translateY(-1px);
+        }
+
+        body.dark-mode .nav-link:hover {
+            color: var(--spotlight);
+            transform: translateY(-1px);
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .btn-feedback {
+            background: var(--spotlight);
+            color: #FFFFFF;
+            text-decoration: none;
+            padding: 0.6rem 1.25rem;
+            border-radius: var(--radius-lg);
+            font-family: var(--font-heading);
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .btn-feedback:hover {
+            opacity: 0.9;
+            transform: translateY(-1px);
+        }
+
+        .theme-toggle-icon {
+            background: none;
+            border: none;
+            color: var(--ink);
+            cursor: pointer;
+            padding: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: var(--transition);
+        }
+        
+        .theme-toggle-icon:hover {
+            background: var(--hairline);
+        }
+
+        /* --- Footer --- */
+        .site-footer {
+            margin-top: 4rem;
+            padding: 3rem 2.5rem;
+            border-top: 1px solid var(--hairline);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .footer-socials {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+        }
+
+        .profile-social img {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid transparent;
+            transition: var(--transition);
+        }
+
+        .profile-social:hover img {
+            border-color: var(--spotlight);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(230, 59, 30, 0.2);
+        }
+
+        .social-link {
+            color: var(--grey);
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .social-link:hover {
+            color: var(--spotlight);
+            transform: translateY(-2px);
+        }
+
+        .footer-credit {
+            font-family: var(--font-heading);
+            color: var(--grey);
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 90px; /* Space for sticky navbar */
+        }
+        
+        @media (max-width: 900px) {
+            .nav-links { display: none; }
+            .site-footer {
+                flex-direction: column;
+                gap: 2rem;
+                text-align: center;
+            }
+        }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <div style="display: flex; justify-content: flex-end; margin-bottom: 1rem;">
-        <button id="themeToggle" style="width: auto; padding: 0.6rem 1.5rem; background: var(--white); border: 1px solid var(--hairline); border-radius: var(--radius-lg); font-size: 0.9rem; box-shadow: var(--shadow-sm); font-family: var(--font-heading); font-weight: 500; color: var(--ink); cursor: pointer; transition: var(--transition);">☀️ Light Mode</button>
+<nav class="navbar">
+    <a href="#" class="nav-logo" id="navLogo">
+        <!-- SVG injected via JS -->
+    </a>
+    <div class="nav-links">
+        <a href="#logo-explorer" class="nav-link">Logo Explorer</a>
+        <a href="#typography" class="nav-link">Typography</a>
+        <a href="#story" class="nav-link">Brand Story</a>
+        <a href="#palette" class="nav-link">Palette</a>
+        <a href="#voice" class="nav-link">Brand Voice</a>
     </div>
-    <header class="page-header">
+    <div class="nav-actions">
+        <a href="mailto:moiskhanmd9090@gmail.com" class="btn-feedback">Send Feedback</a>
+        <button id="themeToggle" class="theme-toggle-icon" aria-label="Toggle Dark Mode">
+            <svg id="theme-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <!-- Starts as moon since body defaults to dark mode, wait, default logic is below -->
+            </svg>
+        </button>
+    </div>
+</nav>
+
+<div class="container">
+    <header class="page-header" style="margin-top: 2rem;">
         <h1>Fur Dial Brand Guidelines</h1>
         <p>A comprehensive overview of our visual identity, featuring interactive logo variations and typography scales.</p>
     </header>
 
     <!-- Logo Variations Section -->
-    <section class="card">
+    <section id="logo-explorer" class="card">
         <h2 class="section-title">Logo Explorer</h2>
         
         <div class="logo-display-container">
@@ -806,7 +1374,7 @@
     </section>
 
     <!-- Typography Section -->
-    <section class="card">
+    <section id="typography" class="card">
         <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; margin-bottom: 2rem;">
             <h2 class="section-title" style="margin-bottom: 0; flex-shrink: 0;">Typography System</h2>
             <div style="display: flex; align-items: center; gap: 0.75rem; background: var(--bg-canvas); padding: 0.5rem 1rem; border-radius: var(--radius-lg); border: 1px solid var(--hairline); min-width: 0;">
@@ -866,9 +1434,305 @@
                 <div class="hint">Click to edit and test this font in real-time</div>
             </div>
         </div>
+
+        <!-- Cross-Platform Font Map -->
+        <div class="font-map-container">
+            <h3 style="font-family: var(--font-heading); color: var(--navy); margin-bottom: 1.5rem; font-size: 1.25rem;">Cross-Platform Font Map</h3>
+            <p style="color: var(--grey); margin-bottom: 1.5rem; max-width: 800px;">These are the exact font names to select inside each platform. When the brand font isn't available, use the approved fallback to stay consistent.</p>
+            <table class="font-table">
+                <thead>
+                    <tr>
+                        <th>Brand Font</th>
+                        <th>Role</th>
+                        <th>Canva</th>
+                        <th>Instagram Stories</th>
+                        <th>Instagram Edits</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="font-weight: 700;">Poppins</td>
+                        <td>Headings, Sub-headings</td>
+                        <td><span class="badge">✓ Poppins</span></td>
+                        <td><span class="badge">✓ Modern</span></td>
+                        <td><span class="badge">✓ Modern</span></td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight: 700;">Inter</td>
+                        <td>Body, Captions, UI</td>
+                        <td><span class="badge">✓ Inter</span></td>
+                        <td><span class="badge">✓ Classic</span></td>
+                        <td><span class="badge">✓ Classic</span></td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight: 700;">Lora</td>
+                        <td>Quotes, Pull-outs</td>
+                        <td><span class="badge">✓ Lora</span></td>
+                        <td><span class="badge warning">~ Classic (fallback)</span></td>
+                        <td><span class="badge warning">~ Serif fallback</span></td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight: 700;">Fredoka</td>
+                        <td>Logo wordmark only</td>
+                        <td><span class="badge">✓ Fredoka</span></td>
+                        <td colspan="2" style="color: var(--grey); font-style: italic; font-size: 0.85rem;">Not available natively — upload logo as image asset</td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight: 700;">Nunito</td>
+                        <td>Logo tagline only</td>
+                        <td><span class="badge">✓ Nunito</span></td>
+                        <td colspan="2" style="color: var(--grey); font-style: italic; font-size: 0.85rem;">Not available natively — upload logo as image asset</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <div class="tip-box">
+                <div style="font-size: 1.25rem;">💡</div>
+                <div>
+                    <strong style="color: inherit;">Instagram tip:</strong> The brand font can't be typed directly in Stories or Edits — design the text in Canva and export as a photo/video, or use the "Modern" style (closest to Poppins) and "Classic" style (closest to Inter) as fallbacks for quick posts.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brand Story & Values Section -->
+    <section id="story" class="card">
+        <h2 class="section-title">01 Brand Story & Values</h2>
+        
+        <div class="story-grid">
+            <div>
+                <h3 class="value-title" style="font-size: 1.25rem; letter-spacing: 1px; text-transform: uppercase;">🐾 Who We Are</h3>
+                <p style="color: var(--ink); margin-top: 1rem;">FurDial is a community for pet parents, built by pet parents. We exist to remove the hundred small frictions of pet care in Mumbai — one problem at a time — so parents spend less time worrying and more time enjoying life with their pets.</p>
+            </div>
+            <div>
+                <h3 class="value-title" style="font-size: 1.25rem; letter-spacing: 1px; text-transform: uppercase;">🎯 Vision</h3>
+                <p style="color: var(--ink); margin-top: 1rem; font-style: italic;">"To become India's most trusted pet companion brand — enabling every pet parent to care for, celebrate, and enjoy life with their pets, from the essentials to extraordinary moments."</p>
+            </div>
+        </div>
+        
+        <h3 class="value-title" style="margin-bottom: 1.5rem; margin-top: 2rem;">Core Values</h3>
+        <div class="core-values-grid">
+            <div class="value-card">
+                <div class="value-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                </div>
+                <div class="value-title">Transparency</div>
+                <p style="font-size: 0.95rem; color: var(--grey);">Absolute clarity across all SOPs and pricing. No hidden costs, no surprises.</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                </div>
+                <div class="value-title">Relentless Quality</div>
+                <p style="font-size: 0.95rem; color: var(--grey);">Vetted experts, verified products, and uncompromising service standards.</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                </div>
+                <div class="value-title">Customer-First</div>
+                <p style="font-size: 0.95rem; color: var(--grey);">Every step designed around convenience, peace of mind, and delight of both pet and parent.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Colour Palette Section -->
+    <section id="palette" class="card">
+        <h2 class="section-title">03 Colour Palette</h2>
+        
+        <div class="color-palette-grid">
+            <div class="color-swatch-card">
+                <div class="swatch-color" style="background: #FDF9F5;"></div>
+                <div class="swatch-info">
+                    <span class="swatch-number">01 · BACKGROUND</span>
+                    <div class="swatch-name">Warm Canvas</div>
+                    <span class="swatch-hex">#FDF9F5</span>
+                    <div class="swatch-desc">All canvases, surfaces, and page backgrounds</div>
+                </div>
+            </div>
+            <div class="color-swatch-card">
+                <div class="swatch-color" style="background: #E63B1E;"></div>
+                <div class="swatch-info">
+                    <span class="swatch-number">02 · PRIMARY BRAND / CTA ★</span>
+                    <div class="swatch-name">Spotlight Coral</div>
+                    <span class="swatch-hex">#E63B1E</span>
+                    <div class="swatch-desc">CTAs, accents, logo wordmark, buttons</div>
+                </div>
+            </div>
+            <div class="color-swatch-card">
+                <div class="swatch-color" style="background: #002F4D;"></div>
+                <div class="swatch-info">
+                    <span class="swatch-number">03 · BRAND NAVY ★</span>
+                    <div class="swatch-name">Deep Navy</div>
+                    <span class="swatch-hex">#002F4D</span>
+                    <div class="swatch-desc">Structure, headers, panels, navy background</div>
+                </div>
+            </div>
+            <div class="color-swatch-card">
+                <div class="swatch-color" style="background: #14110F;"></div>
+                <div class="swatch-info">
+                    <span class="swatch-number">04 · TEXT PRIMARY</span>
+                    <div class="swatch-name">Ink</div>
+                    <span class="swatch-hex">#14110F</span>
+                    <div class="swatch-desc">Headlines, body copy, formal text</div>
+                </div>
+            </div>
+            <div class="color-swatch-card">
+                <div class="swatch-color" style="background: #7A716A;"></div>
+                <div class="swatch-info">
+                    <span class="swatch-number">05 · SECONDARY TEXT</span>
+                    <div class="swatch-name">Soft Grey</div>
+                    <span class="swatch-hex">#7A716A</span>
+                    <div class="swatch-desc">Captions, secondary body, meta copy</div>
+                </div>
+            </div>
+            <div class="color-swatch-card">
+                <div class="swatch-color" style="background: #FFFFFF;"></div>
+                <div class="swatch-info">
+                    <span class="swatch-number">06 · SURFACE</span>
+                    <div class="swatch-name">Surface White</div>
+                    <span class="swatch-hex">#FFFFFF</span>
+                    <div class="swatch-desc">Cards, modals — use sparingly</div>
+                </div>
+            </div>
+            <div class="color-swatch-card">
+                <div class="swatch-color" style="background: #E5DED2;"></div>
+                <div class="swatch-info">
+                    <span class="swatch-number">07 · DIVIDER</span>
+                    <div class="swatch-name">Hairline Border</div>
+                    <span class="swatch-hex">#E5DED2</span>
+                    <div class="swatch-desc">Dividers, product edges, borders</div>
+                </div>
+            </div>
+        </div>
+
+        <h3 class="value-title" style="margin-bottom: 1.5rem; text-transform: uppercase; font-size: 1rem; letter-spacing: 1px;">Approved Colour Pairings</h3>
+        <div class="color-pairings-grid">
+            <div class="pairing-card">
+                <div class="pairing-demo" style="background: #E63B1E; color: #FFFFFF;">Aa</div>
+                <div class="pairing-info">
+                    <strong style="color: var(--navy); font-family: var(--font-heading); margin-bottom: 0.25rem;">White on Coral</strong>
+                    <span style="font-family: monospace; font-size: 0.8rem; color: var(--grey); margin-bottom: 0.5rem;">#FFFFFF on #E63B1E</span>
+                    <span style="font-size: 0.85rem; color: var(--grey);">CTAs, buttons, badges, promo labels</span>
+                </div>
+            </div>
+            <div class="pairing-card">
+                <div class="pairing-demo" style="background: #002F4D; color: #FFFFFF;">Aa</div>
+                <div class="pairing-info">
+                    <strong style="color: var(--navy); font-family: var(--font-heading); margin-bottom: 0.25rem;">White on Navy</strong>
+                    <span style="font-family: monospace; font-size: 0.8rem; color: var(--grey); margin-bottom: 0.5rem;">#FFFFFF on #002F4D</span>
+                    <span style="font-size: 0.85rem; color: var(--grey);">Headers, panels, dark-mode banners</span>
+                </div>
+            </div>
+            <div class="pairing-card">
+                <div class="pairing-demo" style="background: #FDF9F5; color: #14110F;">Aa</div>
+                <div class="pairing-info">
+                    <strong style="color: var(--navy); font-family: var(--font-heading); margin-bottom: 0.25rem;">Ink on Warm Canvas</strong>
+                    <span style="font-family: monospace; font-size: 0.8rem; color: var(--grey); margin-bottom: 0.5rem;">#14110F on #FDF9F5</span>
+                    <span style="font-size: 0.85rem; color: var(--grey);">Body copy, primary content areas</span>
+                </div>
+            </div>
+            <div class="pairing-card">
+                <div class="pairing-demo" style="background: #FDF9F5; color: #E63B1E;">Aa</div>
+                <div class="pairing-info">
+                    <strong style="color: var(--navy); font-family: var(--font-heading); margin-bottom: 0.25rem;">Coral on Warm Canvas</strong>
+                    <span style="font-family: monospace; font-size: 0.8rem; color: var(--grey); margin-bottom: 0.5rem;">#E63B1E on #FDF9F5</span>
+                    <span style="font-size: 0.85rem; color: var(--grey);">Accent text, links, highlighted elements</span>
+                </div>
+            </div>
+            <div class="pairing-card">
+                <div class="pairing-demo" style="background: #002F4D; color: #E63B1E;">Aa</div>
+                <div class="pairing-info">
+                    <strong style="color: var(--navy); font-family: var(--font-heading); margin-bottom: 0.25rem;">Coral on Navy</strong>
+                    <span style="font-family: monospace; font-size: 0.8rem; color: var(--grey); margin-bottom: 0.5rem;">#E63B1E on #002F4D</span>
+                    <span style="font-size: 0.85rem; color: var(--grey);">Accent highlights on dark panels</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brand Voice & Tone Section -->
+    <section id="voice" class="card">
+        <h2 class="section-title">05 Brand Voice & Tone</h2>
+        
+        <div class="tone-grid">
+            <div class="tone-card" style="background: #002F4D;">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-bottom: 0.5rem;"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                <h3>Approachable</h3>
+                <p>Simple, friendly, conversational. We avoid corporate jargon and speak like a trusted friend who happens to know everything about pets.</p>
+                <div class="tone-example">
+                    <span class="tone-example-label">Example</span>
+                    "Got a dog but not enough hours? We've got you."
+                </div>
+            </div>
+            
+            <div class="tone-card" style="background: #E63B1E;">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-bottom: 0.5rem;"><circle cx="12" cy="12" r="10"></circle><path d="M8 14s1.5 2 4 2 4-2 4-2"></path><line x1="9" y1="9" x2="9.01" y2="9"></line><line x1="15" y1="9" x2="15.01" y2="9"></line></svg>
+                <h3>Witty</h3>
+                <p>Clever, light-hearted, and playful. We celebrate the joy pets bring — a good pun is always welcome, as long as it doesn't undercut trust.</p>
+                <div class="tone-example">
+                    <span class="tone-example-label">Example</span>
+                    "Skip the cab refusals. We come to you. No fur, no fuss."
+                </div>
+            </div>
+            
+            <div class="tone-card" style="background: #1B5E20;">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-bottom: 0.5rem;"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                <h3>Empathetic</h3>
+                <p>Deeply tuned to a pet parent's love, anxiety, and time constraints. Always reassuring and solution-driven — never preachy.</p>
+                <div class="tone-example">
+                    <span class="tone-example-label">Example</span>
+                    "We know how much they mean to you. That's why we vet every groomer, every time."
+                </div>
+            </div>
+        </div>
+
+        <div class="dos-donts-grid">
+            <div class="do-card">
+                <div class="do-header">✓ DO WRITE LIKE THIS</div>
+                <ul class="rules-list">
+                    <li><span style="color: #2E7D32;">✓</span> Use "we" and "you" — stay conversational</li>
+                    <li><span style="color: #2E7D32;">✓</span> Lead with the pet parent's problem, then the solution</li>
+                    <li><span style="color: #2E7D32;">✓</span> Keep sentences short. One idea per sentence.</li>
+                    <li><span style="color: #2E7D32;">✓</span> Use Mumbai-specific context (monsoon, traffic, cabs)</li>
+                    <li><span style="color: #2E7D32;">✓</span> End CTAs with energy — "Book now", "Let's go"</li>
+                </ul>
+            </div>
+            <div class="dont-card">
+                <div class="dont-header">✕ DON'T WRITE LIKE THIS</div>
+                <ul class="rules-list">
+                    <li><span style="color: #C62828;">✕</span> Avoid corporate speak ("leverage synergies")</li>
+                    <li><span style="color: #C62828;">✕</span> Don't use fear-based language ("your pet could get hurt")</li>
+                    <li><span style="color: #C62828;">✕</span> Avoid passive voice and filler words</li>
+                    <li><span style="color: #C62828;">✕</span> Don't be preachy or lecture pet parents</li>
+                    <li><span style="color: #C62828;">✕</span> Never use ALL CAPS except for brand name</li>
+                </ul>
+            </div>
+        </div>
     </section>
 
 </div>
+
+<footer class="site-footer">
+    <div class="footer-socials">
+        <a href="https://www.moiskhan.dev" target="_blank" class="social-link profile-social" aria-label="Portfolio">
+            <img src="red_crown_dp.jpg" alt="Mois Khan">
+        </a>
+        <a href="https://github.com/mois-khan" target="_blank" class="social-link" aria-label="GitHub">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.161 22 16.418 22 12c0-5.523-4.477-10-10-10z"></path></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/mois-khan" target="_blank" class="social-link" aria-label="LinkedIn">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path></svg>
+        </a>
+        <a href="https://medium.com/@mois-khan" target="_blank" class="social-link" aria-label="Medium">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M6.866 17.502c3.791 0 6.866-2.464 6.866-5.502 0-3.038-3.075-5.502-6.866-5.502s-6.866 2.464-6.866 5.502c0 3.038 3.075 5.502 6.866 5.502zm10.597-5.502c0 2.871-1.547 5.201-3.454 5.201s-3.454-2.33-3.454-5.201 1.547-5.201 3.454-5.201 3.454 2.33 3.454 5.201zm5.537 0c0 2.502-.451 4.531-1.009 4.531-.557 0-1.009-2.029-1.009-4.531s.452-4.531 1.009-4.531c.558 0 1.009 2.029 1.009 4.531z"></path></svg>
+        </a>
+        <a href="mailto:moiskhanmd9090@gmail.com" class="social-link" aria-label="Email">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"></path></svg>
+        </a>
+    </div>
+    <div class="footer-credit">Built by <a href="https://www.moiskhan.dev" target="_blank" style="color: inherit; text-decoration: none;">Mois Khan</a></div>
+</footer>
 
 <script>
     // --- Data ---
@@ -990,9 +1854,46 @@
     document.body.classList.add('dark-mode');
 
     const themeToggle = document.getElementById('themeToggle');
+    const themeIcon = document.getElementById('theme-icon');
+    
+    // Moon Icon SVG
+    const moonIcon = '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>';
+    // Sun Icon SVG
+    const sunIcon = '<circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>';
+
+    // Init Theme Toggle Icon based on body class
+    const updateThemeIcon = () => {
+        themeIcon.innerHTML = document.body.classList.contains('dark-mode') ? sunIcon : moonIcon;
+    };
+    updateThemeIcon();
+
     themeToggle.addEventListener('click', () => {
         document.body.classList.toggle('dark-mode');
-        themeToggle.textContent = document.body.classList.contains('dark-mode') ? '☀️ Light Mode' : '🌙 Dark Mode';
+        updateThemeIcon();
+    });
+
+    // --- Inject Navbar Logo safely via DOM ---
+    window.addEventListener('DOMContentLoaded', () => {
+        const sourceSvg = document.querySelector('#svg-horizontal svg');
+        if (sourceSvg) {
+            const clonedSvg = sourceSvg.cloneNode(true);
+            
+            // Remove the inline style that collapses the SVG height
+            clonedSvg.removeAttribute('style');
+            
+            const paths = clonedSvg.querySelectorAll('path');
+            if (paths.length >= 2) {
+                // The parent <g> has fill="currentColor", let's remove it so paths can have their own fills
+                const g = clonedSvg.querySelector('g');
+                if (g) g.removeAttribute('fill');
+                
+                // Color the Icon (Coral/Orange)
+                paths[0].setAttribute('fill', 'var(--spotlight)');
+                // Color the Wordmark (Text) (var(--navy) adapts to light/dark mode)
+                paths[1].setAttribute('fill', 'var(--navy)');
+            }
+            document.getElementById('navLogo').appendChild(clonedSvg);
+        }
     });
 
     const typeScale = document.getElementById('typeScale');
